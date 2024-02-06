@@ -118,6 +118,7 @@ metrics:
             - action: 'replace'
               source_labels: ['__meta_kubernetes_pod_node_name']
               target_label: 'node'
+              # WIP
             - action: 'replace'
               source_labels: ['__meta_kubernetes_pod_container_name']
               # Not 'container_name', which disappeared in K8s 1.16.
