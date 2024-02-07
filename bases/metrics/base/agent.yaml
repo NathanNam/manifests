@@ -119,10 +119,10 @@ metrics:
               source_labels: ['__meta_kubernetes_pod_node_name']
               target_label: 'node'
               # WIP
-            - action: 'replace'
-              source_labels: ['__meta_kubernetes_pod_container_name']
-              # Not 'container_name', which disappeared in K8s 1.16.
-              target_label: 'container_label_io_kubernetes_container_name_test'
+            # - action: 'replace'
+            #   source_labels: ['__meta_kubernetes_pod_container_name']
+            #   # Not 'container_name', which disappeared in K8s 1.16.
+            #   target_label: 'container_label_io_kubernetes_container_name_test'
           metric_relabel_configs:
             - action: drop
               regex: ${PROM_SCRAPE_POD_METRIC_DROP_REGEX}
